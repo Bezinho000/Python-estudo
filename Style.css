@@ -70,6 +70,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
 }
 
 /* Posicionando os blocos em cada canto */
