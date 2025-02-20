@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Amor</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="envelope" onclick="abrirCarta()">
+        <p class="coracao">💌</p>
+        <div class="carta">
+            <p>Querida, este é um espaço especial para lembrarmos nossos momentos juntos! ❤️</p>
+            <button class="btn-fotos" onclick="mostrarFotos()">💖</button>
+        </div>
+    </div>
+
+    <div class="galeria" id="galeria">
+        <!-- As fotos e textos serão adicionados dinamicamente aqui -->
+    </div>
+
+    <script>
+        function abrirCarta() {
+            document.querySelector('.envelope').classList.add('aberto');
+        }
+
+        function mostrarFotos() {
+            const galeria = document.getElementById("galeria");
+            const momentos = [
+                { src: "foto1.jpg", data: "12/06/2023", texto: "Nosso primeiro encontro inesquecível!" },
+                { src: "foto2.jpg", data: "12/06/2023", texto: "Nosso primeiro encontro inesquecível!" },
+                { src: "foto3.jpg", data: "12/06/2023", texto: "Nosso primeiro encontro inesquecível!" },
+                { src: "foto4.jpg", data: "12/06/2023", texto: "Nosso primeiro encontro inesquecível!" },
+                { src: "foto5.jpg", data: "12/06/2023", texto: "Nosso primeiro encontro inesquecível!" },
+            ];
+
+            momentos.forEach(momento => {
+                let div = document.createElement("div");
+                div.classList.add("foto-item");
+                div.innerHTML = `<img src="${momento.src}" alt="Momento especial"><p>${momento.data} - ${momento.texto}</p>`;
+                galeria.appendChild(div);
+            });
+        }
+    </script>
+</body>
+
+</html>
